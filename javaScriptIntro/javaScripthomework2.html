@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //Создать переменные num1, num2 которые пользователь вводит с клавиатуры
+        //Проверьте, что переменная num1 равна или меньше 1, а переменная num2 больше или равна 3.
+        let num1 = Number(prompt('enter first number'));
+        let num2 = Number(prompt('enter second number'));
+        let condition = (num1 <= 1) && (num2 >= 3);
+        console.log(condition);
+
+        //Перепишите код к тернарному оператору
+        //let test = true;
+        //if (test === true) {
+        //console.log('+++');
+        //} else {
+        //console.log('---');
+        //}
+        let test = true;
+        (test === true) ? console.log('+++'): console.log('---');
+
+        //В переменной day лежит какое-то число из интервала от 1 до 31.
+        // Определите в какую декаду месяца попадает это число (в первую, вторую или третью).
+
+
+        function decadeOfMounts(day) {
+            if (day >= 1 && day <= 10) {
+                console.log('it`s first decade of mounts');
+            }
+            if (day > 10 && day <= 20) {
+                console.log('it`s second decade of mounts');
+            }
+            if (day > 20 && day <= 31) {
+                console.log('it`s third decade of mounts');
+            } else {
+                console.log('uncorrect data');
+            }
+        }
+
+        //Задание 4
+        //Необходимо от пользователя получить число.
+        //Необходимо вывести разряды числа, а именно: количество сотен, десятков и единиц.
+
+        function getDigitsOfNumber(number) {
+            let units = number % 10;
+            let dozens = Math.floor(number / 10 % 10);
+            let hundreds = Math.floor(number / 100 % 10);
+
+            console.log(
+                `в числе ${number} колличество сотен ${hundreds} ,количество десятков ${dozens} ,количество единиц ${units}`
+                );
+        }
+    </script>
+</body>
+
+</html>
