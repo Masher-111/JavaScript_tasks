@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //    Задание 1
+    //Создайте функцию которая возводит переданное число в куб, необходимо вывести в консоль результат 2^3 степени + 3 ^ 3 степени
+
+    function Cube(number) {
+        return Math.pow(number, 3);
+    }
+
+    console.log(Cube(2) + Cube(3));
+
+    //Задание 2
+    //Пользователь вводит с клавиатуры число, если ввёл текст, необходимо вывести что значение задано неверно
+    //Создать фукнцию, которая высчитывает 13% от данного числа и выводит в консоль текст "Размер заработной платы за вычетом налогов равен значение"
+
+    //let num = Number(prompt('Введите число'));
+
+    function salaryAmount(salary) {
+        if (isNaN(salary)) {
+            alert('Значение задано неверно');
+        } else {
+            return alert(`Размер заработной платы за вычетом налогов равен ${salary*0.87}`);
+        }
+
+    };
+    //salaryAmount(num);
+
+    //Задание 3
+    //Пользователь с клавиатуры вводит 3 числа, необходимо создать функцию, которая определяет максимальное значение среди этих чисел
+    let first = Number(prompt('Введите первое число'));
+    let second = Number(prompt('Введите второе число'));
+    let third = Number(prompt('Введите третье число'));
+
+    function MaxFromThree(a, b, c) {
+        return ((a >= b && a >= c ? a : (b >= a && b >= c ? b : c)));
+    }
+    console.log(MaxFromThree(first, second, third));
+
+    //или
+    console.log(Math.max(first, second, third));
+
+
+    //Задание 4
+    //Необходимо реализовать четыре функции, каждая функция должна принимать по два числа и выполнять одну из операций (каждая функция выполняет одну из них):
+    //1. Сложение
+    //2. Разность
+    //3. Умножение
+    //4. Деление
+    //Необходимо сделать так, чтобы функция вернула число, например выражение console.log(sum(2, 6)); должно вывести число 8 в консоль (sum - функция сложения в данном примере, ваши //названия функций могут отличаться). Округлять значения, которые возвращают функции не нужно, однако, обратите внимание на разность, функция должна вычесть из большего числа меньшее, //либо вернуть 0, если числа равны. Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать не нужно.
+
+    function Sum(num1, num2) {
+        return num1 + num2;
+    }
+
+    function Diff(num1, num2) {
+        if (num1 > num2) {
+            return num1 - num2;
+        } else {
+            return num2 - num1;
+        }
+    }
+
+    function Mult(num1, num2) {
+        return num1 * num2;
+    }
+
+    function Div(num1, num2) {
+        return num1 / num2;
+    }
+</script>
+
+</html>
