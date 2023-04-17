@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //Задание 1
+    //Необходимо с помощью цикла for вывести следующие 11 строк в консоль:
+    //0 – это ноль
+    //1 – нечетное число
+    //2 – четное число
+    //3 – нечетное число
+    //…
+    //10 – четное число
+
+    for (let i = 0; i <= 11; i++) {
+        if (i === 0) {
+            console.log(`${i} Это ноль`);
+        }
+        if (i % 2 === 0 && i != 0) {
+            console.log(`${i} Это четное число`);
+        }
+        if (i % 2 != 0 && i != 0) {
+            console.log(`${i} Это нечетное число`);
+        }
+    }
+
+
+    //Задание 2
+    //Дан массив [1, 2, 3, 4, 5, 6, 7]
+    //Сделайте из этого массива следующий [1, 2, 3, 6, 7]
+
+    let array = [1, 2, 3, 4, 5, 6, 7];
+    for (let i = 0; i <= array.length; i++) {
+        if (array[i] === 4) {
+            array.splice(array[i - 1], 2)
+        }
+
+    }
+
+    console.log(array);
+
+
+    //Задание 3
+    //Используя Math.random() вам необходимо генерировать цифры от 0 до 9, и создать массив состоящий из 5 таких элементов
+    //1. Рассчитать сумму элементов этого массива
+    //2. Найти минимальное число
+    //3. Найти есть ли в этом массиве число 3
+
+    let digitArray = [];
+
+    function FillingArray(array, length) {
+        for (let i = 0; i < length; i++) {
+            array[i] = Math.floor(Math.random() * 10);
+        }
+    }
+
+    function SumOfArray(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
+
+
+
+
+    FillingArray(digitArray, 5)
+    console.log(digitArray);
+    console.log(SumOfArray(digitArray));
+    console.log(Math.min(...digitArray));
+    console.log(digitArray.includes(3));
+
+
+
+    //*Необязательное задание. *
+    //Необходимо вывести горку в консоль (используя цикл for), как показано на рисунке, только у вашей горки должно быть 20 рядов, а не 5:
+
+    //x
+    //xx
+    //xxx
+    //xxxx
+    //xxxxx
+
+    for (let i = 0; i <= 20; i++) {
+        let slideFloor = '';
+        for (let j = 1; j <= i; j++) {
+            slideFloor += 'X';
+        }
+        console.log(slideFloor);
+    }
+</script>
+
+</html>
