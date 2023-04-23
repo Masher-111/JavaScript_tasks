@@ -72,7 +72,7 @@
     //- Необходимо использовать делегирование.
 
     document.addEventListener('click', function (e) {
-        target = e.target;
+        const target = e.target;
         const containSuperElement = e.target.classList.contains('super_element') ? 'присутствует' :
             'отсутствует';
         const tagElement = e.target.tagName;
@@ -92,7 +92,7 @@
 
     const list = document.querySelector('ul');
     list.addEventListener('click', function (e) {
-        target = e.target
+        const target = e.target
         const tagElement = target.tagName.toLowerCase();
         if (tagElement == 'button') {
             console.log(target.textContent);
