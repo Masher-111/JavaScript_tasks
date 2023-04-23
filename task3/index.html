@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="super_element">Привет</p>
+
+    <img src="https://placeimg.com/50/50/animals" alt="">
+    <img src="https://placeimg.com/50/50/arch" alt="">
+    <img src="https://placeimg.com/50/50/nature" alt="">
+    <img src="https://placeimg.com/50/50/people" alt="">
+    <img src="https://placeimg.com/50/50/tech" alt="">
+    <img src="https://placeimg.com/50/50/tech/grayscale" alt="">
+    <img src="https://placeimg.com/50/50/tech/sepia" alt="">
+
+    <br>
+
+    <button>Кнопка</button>
+    <button class="super_element">Кнопка с классом btn</button>
+    <button>Кнопка</button>
+
+    <br>
+
+    <textarea></textarea>
+
+    <br>
+
+    <ul>
+        <li>
+            <button>Кнопка 1</button>
+        </li>
+        <li>
+            <button>Кнопка 2</button>
+        </li>
+        <li>
+            <button>Кнопка 3</button>
+        </li>
+        <li>
+            <button>Кнопка 4</button>
+        </li>
+    </ul>
+
+</body>
+<script>
+    //1. Необходимо вывести сообщение в консоль "все теги прогрузились", когда все теги будут созданы браузером.
+
+    document.addEventListener('DOMContentLoaded', tagLoad);
+
+    function tagLoad() {
+        console.log('Все теги прогрузились');
+    }
+
+    //2. Необходимо вывести сообщение в консоль "страница загрузилась", когда все ресурсы страницы будут загружены.
+
+    window.addEventListener('load', pageLoad);
+
+    function pageLoad() {
+        console.log('Страница загрузилась');
+    }
+
+    //3. При клике на какой-либо тег на странице в консоль должно выводиться сообщение наподобие:
+    //- Класс "super_element" присутствует в элементе "div".
+    //- сообщение должно определять присутствует или отсутствует класс "super_element"
+    //- у элемента, а также выводить в нижнем регистре верный тег в данной строке, по
+    //- которому был совершен клик.
+    //- Необходимо использовать делегирование.
+
+    document.addEventListener('click', function (e) {
+        target = e.target;
+        const containSuperElement = e.target.classList.contains('super_element') ? 'присутствует' :
+            'отсутствует';
+        const tagElement = e.target.tagName;
+        console.log(`Класс "super_element" ${containSuperElement} в элементе "${tagElement.toLowerCase()}".`);
+    });
+
+
+    //4. Сделайте, чтобы при наведении на textarea в консоли появлялось сообщение: "Вы навели на textarea."
+    const textAreaHover = document.querySelector('textarea');
+    textAreaHover.addEventListener('mouseover', TextAreaHover)
+
+    function TextAreaHover() {
+        console.log('Вы навели на textarea');
+    }
+
+    // 5. Необходимо повесить событие клика на тег ul. В обработчике события в консоль необходимо выводить текст, который записан внутри элемента кнопки, по которой был произведен клик. Если клик был не по кнопке, то ничего выводить не нужно. Необходимо использовать делегирование.
+
+    const list = document.querySelector('ul');
+    list.addEventListener('click', function (e) {
+        target = e.target
+        const tagElement = target.tagName.toLowerCase();
+        if (tagElement == 'button') {
+            console.log(target.textContent);
+        }
+
+    });
+
+    //6. Вопрос: Почему в console.log пишется сначала текст из 5 задания и только потом выводится текст из 3 задания, если мы кликаем по кнопкам в ul? Ответ необходимо написать здесь же, под этим комментарием, своими словами.
+
+
+    /*  В 5 задании мы вешаем событие на тег ul ( const list = document.querySelector('ul');list.addEventListener), а в третьем задании событие на весь документ (document.addEventListener). Получается к кнопке button  нас ведут 2 события. Тег ul является родителем li, а тег li родителем button, а document - это корневой элемент дерева DOM, поэтому сначала выполняется событие из  list.addEventListener (он ближе по иерархии к button), а потом document.addEventListener.
+
+     Решила убедиться опытным путем.
+     Пусть у нас имеются 
+     <div class="div">
+     <button class="btn">button1</button>
+     </div>
+
+     добавим скрипт, который будет обращаться к элементу button через события привязанные непосредственно к кнопке, к родительскому элементу, ко всему документу.
+
+        const but1 = document.querySelector('.btn')
+         //событие на корневой элемент document
+         document.addEventListener('click', function (e) {
+             console.log(e.target.tagName);
+
+     }) 
+
+    
+     const block = document.querySelector('.div')
+         //событие на блок div, в котором находится кнопка
+         block.addEventListener('click', function (e) {
+             console.log(e.target.tagName.toLowerCase());
+
+         })
+     const but1 = document.querySelector('.btn')
+         //событие на button
+         but1.addEventListener('click', function (e) {
+             console.log(e.target.textContent);
+         })
+   
+         Cначала выполнятся действия по событию на кнопке, потом по событию на блоке, потом по событию  ко всему документу.
+        
+        
+         */
+
+    // 7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
+
+    const liElements = document.querySelectorAll('li');
+    console.log(liElements);
+
+
+    liElements.forEach(function (liEl, index) {
+
+        if (index % 2 !== 0) {
+            liEl.style.backgroundColor = 'red';
+        }
+
+    });
+</script>
+
+</html>
