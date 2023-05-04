@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="data.js"></script>
+    <div class="products__info">
+        <h2 class="products__info__title">Fetured Items</h2>
+        <p class="products__info__text">Shop for items based on what we featured in this week</p>
+    </div>
+    <section class="products__items center">
+
+    </section>
+</body>
+<script>
+    const productsData = JSON.parse(dataProducts);
+
+    const producsItems = document.querySelector('.products__items');
+
+    productsData.forEach(productItem => {
+
+        const productBox = document.createElement('figure');
+        productBox.classList.add('product__box');
+        producsItems.appendChild(productBox);
+
+        const productImg = document.createElement('img');
+        productImg.setAttribute('alt', 'photo');
+        productImg.src = `${productItem.img}`;
+        productBox.appendChild(productImg);
+
+        const productContent = document.createElement('div');
+        productContent.classList.add('product__content');
+        productBox.appendChild(productContent);
+
+        const ProductContentName = document.createElement('a');
+        ProductContentName.classList.add('product__content__name');
+        ProductContentName.href = "product.html";
+        ProductContentName.textContent = productItem.product;
+        productContent.appendChild(ProductContentName);
+
+        const productContentInfo = document.createElement('p');
+        productContentInfo.classList.add('product__content__info');
+        productContentInfo.textContent = `${productItem.description}`;
+        productContent.appendChild(productContentInfo);
+
+        const productContentPrice = document.createElement('p');
+        productContentPrice.classList.add('product__content__price');
+        productContentPrice.textContent = `${productItem.price}$`;
+        productContent.appendChild(productContentPrice);
+
+
+
+
+
+
+        // <figure class="product__box"><img src="img/item6_img.svg" alt="" class="product_img">
+        //     <div class="product__content"><a href="product.html" class="product__content__name">ELLERY X M'O
+        //             CAPSULE</a>
+        //         <p class="product__content__info">Known for her sculptural takes on traditional tailoring,
+        //             Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+        //         <p class="product__content__price">$52.00</p>
+        //     </div>
+        //  </figure>
+
+
+
+
+    });
+</script>
+
+</html>
