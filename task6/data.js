@@ -5,6 +5,8 @@ const dataProducts = `[
     "product": "Ellery x m'o capsule",
     "description": "Known for her sculptural takes on traditional tailoring,      Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
     "price": 52,
+    "color": "Darkblue",
+    "size": "XL",
     "quanity": "200"
 },
 {
@@ -14,7 +16,7 @@ const dataProducts = `[
     "description": "Known for her sculptural takes on traditional tailoring,      Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
     "price": 52,
     "color": "Black",
-    "size": "XL",
+    "size": "L",
     "quanity": "100"
 },
 {
@@ -23,6 +25,8 @@ const dataProducts = `[
     "product": "Ellery x m'o capsule",
     "description": "Known for her sculptural takes on traditional tailoring,      Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
     "price": 52,
+    "color": "Blue",
+    "size": "XL",
     "quanity": "200"
 },
 {
@@ -31,6 +35,8 @@ const dataProducts = `[
     "product": "Ellery x m'o capsule",
     "description": "Known for her sculptural takes on traditional tailoring,      Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
     "price": 52,
+    "color": "Blue",
+    "size": "XL",
     "quanity": "100"
 },
 {
@@ -39,6 +45,8 @@ const dataProducts = `[
     "product": "Ellery x m'o capsule",
     "description": "Known for her sculptural takes on traditional tailoring,      Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
     "price": 52,
+    "color": "Blue",
+    "size": "L",
     "quanity": "100"
 },
 {
@@ -47,6 +55,8 @@ const dataProducts = `[
     "product": "Ellery x m'o capsule",
     "description": "Known for her sculptural takes on traditional tailoring,      Australian arbiter of cool Kym Ellery teams up with Moda Operandi.",
     "price": 52,
+    "color": "Green",
+    "size": "L",
     "quanity": "100"
 }
 ]`
