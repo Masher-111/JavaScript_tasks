@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .smiling-face {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .left-eye {
+            width: 23%;
+            height: 20%;
+            border-radius: 50%;
+            background-color: rgb(240, 240, 240);
+            position: absolute;
+            left: 20%;
+            top: 20%;
+        }
+
+        .right-eye {
+            width: 23%;
+            height: 20%;
+            border-radius: 50%;
+            background-color: rgb(240, 240, 240);
+            position: absolute;
+            right: 20%;
+            top: 20%;
+        }
+
+        .left-pupil {
+            width: 46%;
+            height: 43%;
+            border-radius: 50%;
+            background-color: rgb(100, 100, 100);
+            position: absolute;
+            top: 27.5%;
+            left: 26%;
+        }
+
+        .right-pupil {
+            width: 46%;
+            height: 43%;
+            border-radius: 50%;
+            background-color: rgb(100, 100, 100);
+            position: absolute;
+            top: 27.5%;
+            left: 26%;
+
+        }
+
+        .lip {
+            width: 52.5%;
+            height: 25%;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+            left: 23.75%;
+            top: 45%;
+            border: solid red;
+            border-width: 2px 0px 0px 0px;
+            transform: rotateZ(0deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="smiling-face">
+
+        <span class="left-eye">
+            <span class="left-pupil">
+            </span>
+        </span>
+
+        <span class="right-eye">
+            <span class="right-pupil">
+            </span>
+        </span>
+
+        <span class="lip" id="myElement">
+
+        </span>
+    </div>
+
+    <script>
+        // Напишите функцию changeStyleDelayed, которая принимает идентификатор элемента и время задержки (в миллисекундах) в качестве аргументов. Функция должна изменить стиль элемента через указанное время.
+        // Пример использования функции
+        //changeStyleDelayed('myElement', 2000); // Через 2 секунды изменяет стиль элемента с id 'myElement'
+
+        function changeStyleDelayed(id, time) {
+            const element = document.getElementById(id);
+            setTimeout(function timeout() {
+                element.style.transition = "transform 0.01s";
+                element.style.transform = "rotateZ(180deg)";
+            }, time)
+
+
+        };
+
+        changeStyleDelayed('myElement', 2000);
+        console.log('Если увидите кого-то без улыбки, подарите свою.');
+    </script>
+</body>
+
+</html>

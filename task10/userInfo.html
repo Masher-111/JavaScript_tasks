@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" placeholder="Введите id пользователя">
+        <button class="btn">Отправить</button>
+        <div class="result"></div>
+    </form>
+
+
+
+
+    <script>
+        /* Реализуйте функцию getUserData, которая принимает идентификатор пользователя (ID) в качестве аргумента и использует fetch для получения данных о пользователе с заданным ID с удаленного сервера. Функция должна возвращать промис, который разрешается с данными о пользователе в виде объекта. Если пользователь с указанным ID не найден, промис должен быть отклонен с соответствующим сообщением об ошибке.
+
+        Подсказка, с последовательностью действий:
+        getUserData использует fetch для получения данных о пользователе с удаленного сервера. Если запрос успешен (с кодом 200), функция извлекает данные из ответа с помощью response.json() и возвращает объект с данными о пользователе. Если запрос неуспешен, функция отклоняет промис с сообщением об ошибке. */
+
+
+        //первый вариант
+        const btnEl = document.querySelector('.btn');
+        const inputEl = document.querySelector('input');
+        const formEl = document.querySelector('form');
+        const userInfo = document.querySelector('result');
+
+        const subTitle = document.createElement('h2');
+        subTitle.textContent = 'Вы не заполнили поле ввода';
+
+
+        btnEl.addEventListener('click', function () {
+            if (inputEl.value === "") {
+                formEl.appendChild(subTitle);
+                inputEl.style.border = '1px solid red';
+            } else {
+                let id = inputEl.value;
+                let url = 'https://jsonplaceholder.typicode.com/users';
+                getUserById(url, id);
+
+            };
+
+        });
+
+
+
+        function getUserById(url, id) {
+            fetch(`${url}?id=${id}`)
+                .then(responce => {
+                    if (responce.ok) {
+                        responce.json().then(
+                            data => {
+                                data.forEach(user => {
+
+                                    document.querySelector('.result').innerHTML = `<div style="background-color: #fafafa; display: flex; border-radius: 5px; overflow: hidden; margin-bottom: 10px;">
+                                    <ul>
+                                      <li>Имя: ${user.name}</li>
+                                      <li>Email: ${user.email}</li>
+                                      <li>Телефон: ${user.phone}</li>
+                                    </ul>
+                                  </div>`
+                                });
+                            });
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+
+        //второй вариант
+
+        function getUserById2(url, id) {
+            fetch(`${url}?id=${id}`)
+                .then(response => {
+                    if (response.ok) {
+                        response.json().then(data => {
+                            let user = JSON.stringify(data);
+                            console.log(user);;
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+
+        getUserById2('https://jsonplaceholder.typicode.com/users', 4);
+    </script>
+</body>
+
+</html>
