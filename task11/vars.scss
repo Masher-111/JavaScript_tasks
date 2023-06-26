@@ -1,0 +1,9 @@
+$textColor: #000;
+$widthSite: 1200px;
+$titleFont: "DM Serif Display",
+serif;
+$textFont:'Jost',
+sans-serif;
+$gapGrid: 100px;
+$secondSiteWidth: calc(($widthSite - $gapGrid) / 2);
+$thirdSiteWidth: calc($widthSite / 3);

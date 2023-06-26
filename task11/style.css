@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+summary {
+  display: block;
+}
+
+body {
+  font-family: "DM Serif Display", serif;
+  font-family: "Jost", sans-serif;
+}
+
+.box-content {
+  overflow: hidden;
+}
+
+.center {
+  padding-left: calc(50% - 600px);
+  padding-right: calc(50% - 600px);
+}
+
+.header {
+  height: 50px;
+  width: 1200px;
+  padding-top: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo__text {
+  font-family: "DM Serif Display", serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+}
+
+.header__menu {
+  list-style-type: none;
+  width: 243px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header__menu_link {
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #000;
+}
+
+.banner {
+  height: 758px;
+  width: 1200px;
+  padding-top: 60px;
+  background-image: url(img/banner_img.jpg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.banner__info {
+  width: 430px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 50px;
+}
+.banner__info_title {
+  font-family: "DM Serif Display", serif;
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 81px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.banner__info_text {
+  font-family: "Jost", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+.banner__info_button {
+  width: 220.14px;
+  height: 75px;
+  padding: 26px 49px 26px 48px;
+  border-radius: 18px;
+  background: rgb(41, 47, 54);
+  box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+}
+
+.projects {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.projects__intro {
+  width: 737px;
+  height: 137px;
+  margin-bottom: 60px;
+}
+.projects__intro_title {
+  font-family: "DM Serif Display", serif;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 63px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.projects__intro_text {
+  font-family: "Jost", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.projects-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 100px;
+  padding-bottom: 100px;
+}
+
+.project {
+  width: 550px;
+  height: 650px;
+}
+.project__info {
+  width: 550px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.project__info__description_title {
+  font-family: "DM Serif Display", serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.project__info__description_text {
+  font-family: "Jost", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+.project__info_button {
+  width: 70px;
+  height: 70px;
+  background-color: rgb(244, 240, 236);
+  border-radius: 50%;
+  border: none;
+}
+
+.left_up_round {
+  border-radius: 0 25% 0 0;
+}
+
+.right_up_round {
+  border-radius: 25% 0 0 0;
+}
+
+.left_down_round {
+  border-radius: 0 0 25% 0;
+}
+
+.right_down_round {
+  border-radius: 0 0 0 25%;
+}
+
+.counter {
+  height: 457px;
+  background: rgb(244, 240, 236);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.counter li:last-child {
+  border-right: none;
+}
+.counter__item {
+  width: 270px;
+  height: 155px;
+  border-right: 1px solid rgb(205, 162, 116);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.counter__item_value {
+  color: rgb(205, 162, 116);
+  font-family: "DM Serif Display", serif;
+  font-size: 85px;
+  font-weight: 400;
+  line-height: 106px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.counter__item_text {
+  font-family: "Jost", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}/*# sourceMappingURL=style.css.map */
