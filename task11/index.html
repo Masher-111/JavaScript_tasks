@@ -113,48 +113,54 @@
             <p class="counter__item_text">Happy CUstomers</p>
         </li>
     </ul>
-    <section class="projects">
-        <div class="projects__intro">
-            <p class="projects__intro_title">Articles & News</p>
-            <p class="projects__intro_text">It is a long established fact that a reader will be distracted by the of
+    <section class="blog" id="app">
+        <div class="blog__intro">
+            <p class="blog__intro_title">Articles & News</p>
+            <p class="blog__intro_text">It is a long established fact that a reader will be distracted by the of
                 readable content of a page when lookings at its layouts the points of using.</p>
         </div>
-        <div class="projects-box">
-            <figure class="project"><img src="img/project_img1.jpg" alt="" class="project__img left_up_round">
-                <div class="project__info">
-                    <div class="project__info_descriptoin">
-                        <p class="project__info__description_title">Modern Kitchen</p>
-                        <p class="project__info__description_text">Decor / Artchitecture</p>
-                    </div><button class="project__info_button"><svg width="10" height="20" viewBox="0 0 10 20"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" /></svg></button>
+        <div class="blog__content">
+            <article class="article" v-for="article in articles" :key="article.id">
+                <img :src="article.articleImg" alt="article.articleTitle" class="article__img">
+                <div class="article__info">
+                    <p class="article__info_title">{{article.articleTitle}}</p>
+                    <div class="article__info__description">
+                        <p class="article__info__description_date">{{article.articleDate}}</p> <button
+                            class="project__info_button"><svg width="10" height="20" viewBox="0 0 10 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" /></svg></button>
+                    </div>
                 </div>
-            </figure>
-            <figure class="project"><img src="img/project_img1.jpg" alt="" class="project__img right_up_round">
-                <div class="project__info">
-                    <div class="project__info_descriptoin">
-                        <p class="project__info__description_title">Modern Kitchen</p>
-                        <p class="project__info__description_text">Decor / Artchitecture</p>
-                    </div><button class="project__info_button"><svg width="10" height="20" viewBox="0 0 10 20"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" /></svg></button>
-                </div>
-            </figure>
-            <figure class="project"><img src="img/project_img1.jpg" alt="" class="project__img left_down_round">
-                <div class="project__info">
-                    <div class="project__info_descriptoin">
-                        <p class="project__info__description_title">Modern Kitchen</p>
-                        <p class="project__info__description_text">Decor / Artchitecture</p>
-                    </div><button class="project__info_button"><svg width="10" height="20" viewBox="0 0 10 20"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" /></svg></button>
-                </div>
-            </figure>
+
+            </article>
+
         </div>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                articles: [{
+                    articleImg: 'img/blog_img1.jpg',
+                    articleTitle: 'Let’s Get Solution For Building Construction Work',
+                    articleDate: '26 December,2022 '
+                }, {
+                    articleImg: 'img/blog_img2.jpg',
+                    articleTitle: 'Low Cost Latest Invented Interior Designing Ideas.',
+                    articleDate: '22 December,2022 '
+                }, {
+                    articleImg: 'img/blog_img3.jpg',
+                    articleTitle: 'Best For Any Office & Business Interior Solution',
+                    articleDate: '25 December,2022'
+                }]
+            },
+            methods: {
+
+            }
+        });
+    </script>
 </body>
 
 </html>

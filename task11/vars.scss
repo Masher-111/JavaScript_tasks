@@ -5,5 +5,6 @@ serif;
 $textFont:'Jost',
 sans-serif;
 $gapGrid: 100px;
+$gapForThree: 50px;
 $secondSiteWidth: calc(($widthSite - $gapGrid) / 2);
-$thirdSiteWidth: calc($widthSite / 3);
+$thirdSiteWidth: calc(($widthSite - $gapForThree) / 3);
