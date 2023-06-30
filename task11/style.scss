@@ -290,14 +290,17 @@ body {
 
 .blog {
     margin-top: 60px;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 
     &__intro {
-        width: 737px;
+        width: 811px;
         height: 137px;
         margin-bottom: 60px;
+        display: flex;
+        flex-direction: column;
 
         &_title {
             font-family: $titleFont;
@@ -488,4 +491,147 @@ body {
             text-align: left;
         }
     }
+}
+
+//blog page
+
+.top-banner {
+    height: 356px;
+    background-image: url(img/top_banner_img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+
+    &__heading {
+        background-color: white;
+        height: 178px;
+        width: 503px;
+        border-radius: 37px 37px 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &_title {
+            font-family: $titleFont;
+            font-size: 50px;
+            font-weight: 400;
+            line-height: 63px;
+            letter-spacing: 0em;
+            text-align: left;
+
+        }
+
+        &_description {
+            font-family: $textFont;
+            color: $textColor;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 33px;
+            letter-spacing: 0.01em;
+            text-align: left;
+
+        }
+    }
+
+}
+
+.blog-content {
+    width: 1200px;
+
+    &__latest {
+        margin-top: 200px;
+
+        &_title {
+            font-family: $titleFont;
+            font-size: 50px;
+            font-weight: 400;
+            line-height: 63px;
+            letter-spacing: 0.02em;
+            text-align: left;
+
+        }
+
+
+        &_img {
+            border-radius: 62px;
+        }
+
+        &__box {
+            width: 1200px;
+            height: 522px;
+            border-radius: 62px;
+            padding: 22px;
+            border: 1px solid rgba(231, 231, 231, 1);
+            box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 65px;
+
+            &__info {
+                width: 489px;
+                display: flex;
+                flex-direction: column;
+                gap: 41px;
+
+                &__description {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 22px;
+
+                    &_title {
+                        font-family: $titleFont;
+                        font-size: 25px;
+                        font-weight: 400;
+                        line-height: 31px;
+                        letter-spacing: 0.02em;
+                        text-align: left;
+
+                    }
+
+                    &_text {
+                        font-family: $textFont;
+                        font-size: 22px;
+                        font-weight: 400;
+                        line-height: 33px;
+                        letter-spacing: 0.01em;
+                        text-align: left;
+
+                    }
+                }
+
+
+                &_footer {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &_date {
+                        font-family: $textFont;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        letter-spacing: 0.01em;
+                        text-align: left;
+
+                    }
+                }
+
+            }
+
+        }
+
+
+
+
+
+    }
+
 }

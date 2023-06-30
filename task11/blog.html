@@ -13,20 +13,77 @@
 </head>
 
 <body>
-    <div class="box-content center">
-        <header class="header">
-            <div class="logo"><svg class="logo__img" width="34" height="34" viewBox="0 0 34 34" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z"
-                        fill="#CDA274" /></svg><a href="index.html" class="logo__text">Interno</a></div>
-            <ul class="header__menu">
-                <li><a href="#" class="header__menu_link">Home</a></li>
-                <li><a href="#" class="header__menu_link">Project</a></li>
-                <li><a href="#" class="header__menu_link">Blog</a></li>
-            </ul>
-        </header>
+
+    <header class="header center">
+        <div class="logo"><svg class="logo__img" width="34" height="34" viewBox="0 0 34 34" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z"
+                    fill="#CDA274" /></svg><a href="index.html" class="logo__text">Interno</a></div>
+        <ul class="header__menu">
+            <li><a href="#" class="header__menu_link">Home</a></li>
+            <li><a href="#" class="header__menu_link">Project</a></li>
+            <li><a href="#" class="header__menu_link">Blog</a></li>
+        </ul>
+    </header>
+    <div class="top-banner">
+        <div class="top-banner__heading">
+            <h1 class="top-banner__heading_title">Articles & News</h1>
+            <p class="top-banner__heading_description">Home / Blog</p>
+
+        </div>
     </div>
+    <div class="blog-content center">
+        <div class="blog-content__latest">
+            <h1 class="blog-content__latest_title">Latest Post</h1>
+            <div class="blog-content__latest__box">
+                <img class="blog-content__latest_img" src="img/latest_img.jpg" alt="latest image">
+                <div class="blog-content__latest__box__info">
+                    <div class="blog-content__latest__box__info__description">
+                        <h1 class="blog-content__latest__box__info__description_title">Low Cost Latest Invented Interior
+                            Designing
+                            Ideas
+                        </h1>
+                        <p class="blog-content__latest__box__info__description_text">Lorem ipsum dolor sit amet,
+                            adipiscing Aliquam
+                            eu
+                            sem vitae turpis dignissim maximus.posuere in.Contrary to popular belief.</p>
+                        <p class="blog-content__latest__box__info__description_text">Lorem Ipsum is not simply random
+                            text. It has
+                            roots in a piece of classica.</p>
+                    </div>
+
+                    <div class="blog-content__latest__box__info_footer">
+                        <p class="blog-content__latest__box__info_footer_date">26 December,2022</p>
+                        <button class="project__info_button"><svg width="10" height="20" viewBox="0 0 10 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" /></svg></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <section class="blog" id="app">
+        <p class="blog__intro_title">Articles & News</p>
+        <div class="blog__content center">
+            <article class="article" v-for="article in articles" :key="article.id">
+                <img :src="article.articleImg" alt="article.articleTitle" class="article__img">
+                <div class="article__info">
+                    <p class="article__info_title">{{article.articleTitle}}</p>
+                    <div class="article__info__description">
+                        <p class="article__info__description_date">{{article.articleDate}}</p> <button
+                            class="project__info_button"><svg width="10" height="20" viewBox="0 0 10 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 19L9 10L1 1" stroke="#292F36" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" /></svg></button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer__info">
@@ -70,6 +127,41 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                articles: [{
+                    articleImg: 'img/blog_img1.jpg',
+                    articleTitle: 'Let’s Get Solution For Building Construction Work',
+                    articleDate: '26 December,2022 '
+                }, {
+                    articleImg: 'img/blog_img2.jpg',
+                    articleTitle: 'Low Cost Latest Invented Interior Designing Ideas.',
+                    articleDate: '22 December,2022 '
+                }, {
+                    articleImg: 'img/blog_img3.jpg',
+                    articleTitle: 'Best For Any Office & Business Interior Solution',
+                    articleDate: '25 December,2022'
+                }, {
+                    articleImg: 'img/blog_img4.jpg',
+                    articleTitle: 'Let’s Get Solution For Building Construction Work',
+                    articleDate: '26 December,2022 '
+                }, {
+                    articleImg: 'img/blog_img5.jpg',
+                    articleTitle: 'Low Cost Latest Invented Interior Designing Ideas.',
+                    articleDate: '22 December,2022 '
+                }, {
+                    articleImg: 'img/blog_img6.jpg',
+                    articleTitle: 'Best For Any Office & Business Interior Solution',
+                    articleDate: '25 December,2022'
+                }]
+            },
+            methods: {
+
+            }
+        });
+    </script>
 
 </body>
 
