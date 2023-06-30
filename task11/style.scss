@@ -50,7 +50,7 @@ body {
     line-height: 50px;
     letter-spacing: 0em;
     text-align: left;
-    color: $textColor;
+    color: $titleColor;
 
 
 }
@@ -69,7 +69,7 @@ body {
         line-height: 25px;
         letter-spacing: 0em;
         text-align: center;
-        color: $textColor;
+        color: $titleColor;
 
     }
 }
@@ -107,6 +107,7 @@ body {
 
         &_text {
             font-family: $textFont;
+            color: $textColor;
             font-size: 22px;
             font-weight: 400;
             line-height: 33px;
@@ -152,6 +153,7 @@ body {
 
         &_text {
             font-family: $textFont;
+            color: $textColor;
             font-size: 22px;
             font-weight: 400;
             line-height: 33px;
@@ -197,6 +199,7 @@ body {
 
             &_text {
                 font-family: $textFont;
+                color: $textColor;
                 font-size: 22px;
                 font-weight: 400;
                 line-height: 33px;
@@ -273,6 +276,7 @@ body {
 
         &_text {
             font-family: $textFont;
+            color: $textColor;
             font-size: 22px;
             font-weight: 400;
             line-height: 33px;
@@ -306,6 +310,7 @@ body {
 
         &_text {
             font-family: $textFont;
+            color: $textColor;
             font-size: 22px;
             font-weight: 400;
             line-height: 33px;
@@ -362,6 +367,7 @@ body {
 
             &_date {
                 font-family: $textFont;
+                color: $textColor;
                 font-size: 16px;
                 font-weight: 400;
                 line-height: 24px;
@@ -371,4 +377,112 @@ body {
         }
     }
 
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-top: 100px;
+    padding-bottom: 136px;
+
+    &__info {
+        width: $thirdSiteWidth;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        &_text {
+            font-family: $textFont;
+            color: $textColor;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 33px;
+            letter-spacing: 0.01em;
+            text-align: left;
+        }
+
+        &_icons {
+            display: flex;
+            flex-direction: row;
+            gap: 54px;
+        }
+
+    }
+
+    &_title {
+        font-family: $titleFont;
+        color: $titleColor;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 31px;
+        letter-spacing: 0em;
+        text-align: left;
+
+    }
+
+    &__links {
+        width: $thirdSiteWidth;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-left: 100px;
+    }
+
+    &__menu {
+        list-style-type: none;
+        width: 243px;
+        display: flex;
+        flex-direction: row;
+
+        &_link {
+            color: $textColor;
+            font-family: $textFont;
+            font-size: 22px;
+            font-weight: 400;
+            line-height: 66px;
+            letter-spacing: 0.01em;
+            text-align: left;
+        }
+    }
+}
+
+&__contacts {
+    width: $thirdSiteWidth;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+
+
+    &_address {
+        font-family: $textFont;
+        color: $textColor;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 31px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    &_mail {
+        font-family: $textFont;
+        color: $textColor;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 31px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    &_phone {
+        font-family: $textFont;
+        color: $textColor;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 31px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
 }
