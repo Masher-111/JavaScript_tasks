@@ -428,61 +428,64 @@ body {
         flex-direction: column;
         gap: 18px;
         margin-left: 100px;
-    }
 
-    &__menu {
-        list-style-type: none;
-        width: 243px;
-        display: flex;
-        flex-direction: row;
+        &__menu {
+            list-style-type: none;
+            width: 243px;
+            display: flex;
+            flex-direction: column;
 
-        &_link {
-            color: $textColor;
-            font-family: $textFont;
-            font-size: 22px;
-            font-weight: 400;
-            line-height: 66px;
-            letter-spacing: 0.01em;
-            text-align: left;
+            &_link {
+                color: $textColor;
+                font-family: $textFont;
+                font-size: 22px;
+                font-weight: 400;
+                line-height: 66px;
+                letter-spacing: 0.01em;
+                text-align: left;
+            }
         }
     }
-}
-
-&__contacts {
-    width: $thirdSiteWidth;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
 
 
 
-    &_address {
-        font-family: $textFont;
-        color: $textColor;
-        font-size: 25px;
-        font-weight: 400;
-        line-height: 31px;
-        letter-spacing: 0em;
-        text-align: left;
-    }
 
-    &_mail {
-        font-family: $textFont;
-        color: $textColor;
-        font-size: 25px;
-        font-weight: 400;
-        line-height: 31px;
-        letter-spacing: 0em;
-        text-align: left;
-    }
+    &__contacts {
+        width: $thirdSiteWidth;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
 
-    &_phone {
-        font-family: $textFont;
-        color: $textColor;
-        font-size: 25px;
-        font-weight: 400;
-        line-height: 31px;
-        letter-spacing: 0em;
-        text-align: left;
+
+
+        &_address {
+            font-family: $textFont;
+            color: $textColor;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 31px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+
+        &_mail {
+            font-family: $textFont;
+            color: $textColor;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 31px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+
+        &_phone {
+            font-family: $textFont;
+            color: $textColor;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 31px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
     }
 }

@@ -350,12 +350,16 @@ body {
 }
 .footer__links {
   width: 383.3333333333px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-left: 100px;
 }
 .footer__links__menu {
   list-style-type: none;
   width: 243px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .footer__links__menu_link {
   color: rgb(77, 80, 83);
@@ -368,6 +372,9 @@ body {
 }
 .footer__contacts {
   width: 383.3333333333px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 .footer__contacts_address {
   font-family: "Jost", sans-serif;
