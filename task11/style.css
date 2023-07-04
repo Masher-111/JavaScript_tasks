@@ -523,4 +523,41 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   padding-top: 50px;
+}
+
+.sidebar {
+  display: inline-block;
+  overflow: hidden;
+}
+.sidebar_radio {
+  display: inline-block;
+  font-family: "Jost", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+.sidebar input[type=radio] {
+  display: none;
+}
+.sidebar label {
+  width: 132px;
+  height: 41px;
+  cursor: pointer;
+  line-height: 42px;
+  background: rgb(244, 240, 236);
+  width: 132px;
+  height: 41px;
+  padding: 9px 30px 9px 30px;
+  border-radius: 10px;
+  gap: 10px;
+}
+.sidebar input[type=radio]:checked + label {
+  color: white;
+  background: rgb(41, 47, 54);
+}
+.sidebar label:hover {
+  color: white;
+  background: rgb(41, 47, 54);
 }/*# sourceMappingURL=style.css.map */

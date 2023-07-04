@@ -28,25 +28,31 @@
     <div class="blog_details_top-banner">
 
     </div>
-    <div class="blog-details__content">
-        <section class="blog-details__content__articles" id="app">
-            <div class="sidebar">
+    <div class="blog-details__content" id="app">
 
+        <div class="sidebar">
+            <div class="sidebar_radio">
+                <input type="radio" v-model="picked" name="radio" id="1" value="kitchen">
+                <label for="1">kitchen</label>
+            </div>
+            <div class="sidebar_radio">
+                <input type="radio" v-model="picked" name="radio" id="2" value="bedroom">
+                <label for="2">bedroom</label>
+            </div>
+            <div class="sidebar_radio">
+                <input type="radio" v-model="picked" name="radio" id="3" value="building">
+                <label for="3">building</label>
+            </div>
+            <div class="sidebar_radio">
+                <input type="radio" v-model="picked" name="radio" id="4" value="" disabled>
+                <label for="3">Show all</label>
             </div>
 
-            <input type="radio" v-model="picked" name="radio" id="1" value="kitchen">
-            <label for="1">kitchen</label>
-
-
-            <input type="radio" v-model="picked" name="radio" id="2" value="bedroom">
-            <label for="2">bedroom</label>
-
-
-            <input type="radio" v-model="picked" name="radio" id="3" value="building">
-            <label for="3">building</label>
             <br>
             <span>Выбрано: {{ picked }}</span>
 
+        </div>
+        <section class="blog-details__content__articles">
             <components-new v-for="article in blogArticles" v-if="!picked" :key="article.id" :title="article.title"
                 :first-paragraph="article.firstParagraph" :second-paragraph="article.secondParagraph"
                 :subtitle="article.subtitle" :subtitle-text="article.subtitleText" :tag="article.tag"></components-new>
