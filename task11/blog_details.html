@@ -47,10 +47,15 @@
             <br>
             <span>Выбрано: {{ picked }}</span>
 
-            <components-new v-for="article in blogArticles" v-if="article.tag==picked" :key="article.id"
+            <components-new v-for="article in blogArticles" v-if="!picked" :key="article.id" :title="article.title"
+                :first-paragraph="article.firstParagraph" :second-paragraph="article.secondParagraph"
+                :subtitle="article.subtitle" :subtitle-text="article.subtitleText" :tag="article.tag"></components-new>
+            <components-new v-for="article in blogArticles" v-if="article.tag == picked" :key="article.id"
                 :title="article.title" :first-paragraph="article.firstParagraph"
                 :second-paragraph="article.secondParagraph" :subtitle="article.subtitle"
-                :subtitle-text="article.subtitleText" :tag="article.tag"></components-new>
+                :subtitle-text="article.subtitleText" :tag="article.tag">
+
+            </components-new>
 
         </section>
 
