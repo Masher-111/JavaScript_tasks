@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Blog details</title>
+</head>
+
+<body>
+    <header class="header center">
+        <div class="logo"><svg class="logo__img" width="34" height="34" viewBox="0 0 34 34" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 34.0003H13.4588V24.499C13.4588 22.4853 15.0898 20.8543 17.1035 20.8543C19.1172 20.8543 20.7482 22.4853 20.7482 24.499V34.0003H33.9975V0C15.2211 0 0 15.2211 0 34.0003Z"
+                    fill="#CDA274" /></svg><a href="index.html" class="logo__text">Interno</a></div>
+        <ul class="header__menu">
+            <li><a href="/index.html" class="header__menu_link">Home</a></li>
+            <li><a href="#" class="header__menu_link">Project</a></li>
+            <li><a href="/blog.html" class="header__menu_link">Blog</a></li>
+        </ul>
+    </header>
+    <div class="blog_details_top-banner">
+
+    </div>
+    <div class="blog-details__content">
+        <section class="blog-details__content__articles" id="app">
+            <div class="sidebar">
+
+            </div>
+
+            <input type="radio" v-model="picked" name="radio" id="1" value="kitchen">
+            <label for="1">kitchen</label>
+
+
+            <input type="radio" v-model="picked" name="radio" id="2" value="bedroom">
+            <label for="2">bedroom</label>
+
+
+            <input type="radio" v-model="picked" name="radio" id="3" value="building">
+            <label for="3">building</label>
+            <br>
+            <span>Выбрано: {{ picked }}</span>
+
+            <components-new v-for="article in blogArticles" v-if="article.tag==picked" :key="article.id"
+                :title="article.title" :first-paragraph="article.firstParagraph"
+                :second-paragraph="article.secondParagraph" :subtitle="article.subtitle"
+                :subtitle-text="article.subtitleText" :tag="article.tag"></components-new>
+
+        </section>
+
+
+    </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="components.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+
+                picked: '',
+                sortedAr: [],
+                blogArticles: [{
+                        id: 1,
+                        tag: "kitchen",
+                        title: "Let’s Get Solution for Building Construction Work",
+                        firstParagraph: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+
+
+                        secondParagraph: "Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+                        subtitle: 'Design sprints are great',
+                        subtitleText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
+                    },
+                    {
+                        id: 2,
+                        tag: "bedroom",
+                        title: "Let’s Get Solution for Building Construction Work",
+                        firstParagraph: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+
+
+                        secondParagraph: "Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+                        subtitle: 'Design sprints are great',
+                        subtitleText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
+                    },
+                    {
+                        id: 3,
+                        tag: "building",
+                        title: "Let’s Get Solution for Building Construction Work",
+                        firstParagraph: "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable.",
+
+
+                        secondParagraph: "Embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
+                        subtitle: 'Design sprints are great',
+                        subtitleText: 'Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered.'
+                    }
+                ]
+            },
+            computed: {
+                sort() {
+                    return this.blogArticles.filter(article => {
+                        return article.tag == this.correctArt
+
+                    })
+
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
