@@ -525,9 +525,24 @@ body {
   padding-top: 50px;
 }
 
+.blog-details__content {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 52px;
+}
+.blog-details__content__articles {
+  width: 800px;
+}
+
 .sidebar {
+  width: 345px;
   display: inline-block;
   overflow: hidden;
+  display: inline-table;
+}
+.sidebar_title {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .sidebar_radio {
   display: inline-block;
@@ -537,6 +552,11 @@ body {
   line-height: 23px;
   letter-spacing: 0.02em;
   text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
 }
 .sidebar input[type=radio] {
   display: none;

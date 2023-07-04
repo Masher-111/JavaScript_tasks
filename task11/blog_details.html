@@ -31,6 +31,7 @@
     <div class="blog-details__content" id="app">
 
         <div class="sidebar">
+            <h1 class="sidebar_title">Tags</h1>
             <div class="sidebar_radio">
                 <input type="radio" v-model="picked" name="radio" id="1" value="kitchen">
                 <label for="1">kitchen</label>
@@ -44,12 +45,17 @@
                 <label for="3">building</label>
             </div>
             <div class="sidebar_radio">
-                <input type="radio" name="radio" id="4" value="" v-model="picked">
-                <label for="4">Show all</label>
+                <input type="radio" v-model="picked" name="radio" id="4" value="Architecture">
+                <label for="4">Architecture</label>
             </div>
-
-            <br>
-            <span>Выбрано: {{ picked }}</span>
+            <div class="sidebar_radio">
+                <input type="radio" v-model="picked" name="radio" id="5" value="Kitchen Planning">
+                <label for="5">Kitchen Planning</label>
+            </div>
+            <div class="sidebar_radio">
+                <input type="radio" name="radio" id="6" value="" v-model="picked">
+                <label for="6">Show all</label>
+            </div>
 
         </div>
         <section class="blog-details__content__articles">

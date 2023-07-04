@@ -646,9 +646,28 @@ body {
     padding-top: 50px;
 }
 
+.blog-details__content {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 52px;
+
+    &__articles {
+        width: 800px;
+    }
+}
+
+
+
 .sidebar {
+    width: 345px;
     display: inline-block;
     overflow: hidden;
+    display: inline-table;
+
+    &_title {
+        height: fit-content;
+    }
+
 
     &_radio {
         display: inline-block;
@@ -658,6 +677,9 @@ body {
         line-height: 23px;
         letter-spacing: 0.02em;
         text-align: center;
+        height: fit-content;
+        width: fit-content;
+        padding: 10px;
     }
 
     input[type=radio] {
